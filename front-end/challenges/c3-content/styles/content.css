@@ -1,22 +1,53 @@
-.cards {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 20px;
-    max-width: 800px;
-    margin: 0 auto;
+:root {
+  --card-info-color: #592a92;
 }
 
-.card {    
-    background-color: #251e3fb0;
-    padding: 20px;
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 15px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.card {
+  background-color: #3f1d69;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+
+  height: 450;
 }
 
 .card_image-container img {
-    width: 100%;
-    height: ;
+  width: 100%;
+  height: 200px;
 }
 
 .card_content,
 .card_info {
-    padding: 24px;
+  text-align: center;
+  padding: 24px;
+  font-size: 18px;
+  line-height: 28px;
+}
+
+.card_content strong {
+    color: rgb(18, 212, 51);
+}
+
+.card_info {
+  background-color: var(--card-info-color);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5px;
+  align-self: stretch;  
+}
+
+.card_price {
+  background-color: var(--card-info-color);
+  filter: brightness(92%);
+  
+  border-radius: 8px;
 }
