@@ -1,0 +1,22 @@
+.cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.card {    
+    background-color: #251e3fb0;
+    padding: 20px;
+}
+
+.card_image-container img {
+    width: 100%;
+    height: ;
+}
+
+.card_content,
+.card_info {
+    padding: 24px;
+}
