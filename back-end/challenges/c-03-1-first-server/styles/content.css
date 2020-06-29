@@ -1,0 +1,75 @@
+:root {
+  --card-info-color: #592a92;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 15px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.card {
+  background-color: #3f1d69;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+
+  height: 450;
+
+  border-radius: 8px;
+
+  cursor: pointer;
+}
+
+.card#starter:hover {
+  border: 4px solid #9c24ff;
+}
+
+.card#launchbase:hover {
+  border: 4px solid #db892c;
+}
+
+.card#gostack:hover {
+  border: 4px solid #04d361;
+}
+
+
+.card_image-container img {
+  width: 100%;
+  height: 200px;
+}
+
+.card_content,
+.card_info {
+  text-align: center;
+  padding: 24px;
+  font-size: 18px;
+  line-height: 28px;
+}
+
+
+.card_content strong {
+  color: rgb(18, 212, 51);
+}
+
+.card_info {
+  background-color: var(--card-info-color);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5px;
+  align-self: stretch;
+
+  border-radius: 8px;
+}
+
+.card_price {
+  background-color: var(--card-info-color);
+  filter: brightness(92%);
+
+  border-radius: 8px;
+}
+
+/* === MODAL ===  */
