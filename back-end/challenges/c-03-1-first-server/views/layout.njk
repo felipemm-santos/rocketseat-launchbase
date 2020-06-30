@@ -3,12 +3,14 @@
     <head>
         <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <title>Cursos</title>
+        
+        {% block title %}
+            <title>Rocketseat</title>
+        {% endblock title %}
 
         <link rel="stylesheet" href="/styles/main.css"/>
-        
-        {% block styles %}        
-        {% endblock styles %}
+
+        {% block styles %}{% endblock styles %}
     </head>
     <body>
         <header>
