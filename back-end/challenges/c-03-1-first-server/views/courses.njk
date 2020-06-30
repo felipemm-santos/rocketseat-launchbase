@@ -1,60 +1,34 @@
-{% extends "layout.html" %}
+{% extends "layout.njk" %}
 
 {% block styles %}
   <link rel="stylesheet" href="styles/courses.css"/>
-  
+
   <link rel="stylesheet" href="styles/modal.css"/>
 {% endblock styles %}
 
 {% block content %}
   <section class="cards">
-    <div id="starter" class="card">
-      <div class="card_image-container">
-        <img src="https://skylab.rocketseat.com.br/static/64c237ccff807c054339a62d53b4b402.svg" alt="Starter"/>
+    {% for item in items %}
+      <div id="{{item.id}}" class="card">
+        <div class="card_image-container">
+          <img src="{{item.img.src}}" alt="Imagem do curso {{item.img.alt}}"/>
+        </div>
+        <div class="card_content">
+          <p>
+            <strong>
+              {{item.description.strong}}
+            </strong>
+            {{item.description.normal}}
+          </p>
+        </div>
+        <div class="card_info">
+          <p>{{item.modules}}</p>
+          <p class="card_price">
+            {{item.price}}
+          </p>
+        </div>
       </div>
-      <div class="card_content">
-        <p>
-          <strong>Torne-se um programador desejado</strong>
-          no mercado com esses cursos gratuitos
-        </p>
-      </div>
-      <div class="card_info">
-        <p>43 módulos</p>
-        <p class="card_price">Grátis</p>
-      </div>
-    </div>
-
-    <div id="launchbase" class="card">
-      <div class="card_image-container">
-        <img src="https://skylab.rocketseat.com.br/static/0828532024cb46921a6b5e941f8d788d.svg" alt="LaunchBase"/>
-      </div>
-      <div class="card_content">
-        <p>
-          <strong>Domine programação do zero</strong>
-          e tenha acesso às melhores oportunidades do mercado
-        </p>
-      </div>
-      <div class="card_info">
-        <p>43 módulos</p>
-        <p class="card_price">Pago</p>
-      </div>
-    </div>
-
-    <div id="gostack" class="card">
-      <div class="card_image-container">
-        <img src="https://skylab.rocketseat.com.br/static/83a178a0653dab1d55e2ed7946465975.svg" alt="GoStack"/>
-      </div>
-      <div class="card_content">
-        <p>
-          <strong>Treinamento intensivo</strong>
-          nas técnologias mais modernas de desenvolvimento web e mobile
-        </p>
-      </div>
-      <div class="card_info">
-        <p>43 módulos</p>
-        <p class="card_price">Pago</p>
-      </div>
-    </div>
+    {% endfor %}
   </section>
 {% endblock content %}
 
