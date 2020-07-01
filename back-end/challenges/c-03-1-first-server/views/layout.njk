@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        
+
         {% block title %}
             <title>Rocketseat</title>
         {% endblock title %}
@@ -42,13 +42,8 @@
         {% block modal %}{% endblock modal %}
 
         <footer class="links">
-            <a href="https://github.com/Rocketseat" target="_blank">Github |</a>
-            <a href="https://www.instagram.com/rocketseat_oficial/?hl=pt-br" target="_blank">
-                Instagram |
-            </a>
-            <a href="https://www.facebook.com/rocketseat/" target="_blank">
-                Facebook
-            </a>
+            {% block links %}
+            {% endblock links %}
         </footer>
 
         {% block scripts %}{% endblock scripts %}

@@ -10,6 +10,9 @@ server.use(express.static('public'));
 
 nunjucks.configure('views', {
   express: server,
+
+  // Permite html dentro de variáveis
+  autoescape: false,
 });
 
 server.get('/', (req, res) => {
@@ -17,7 +20,27 @@ server.get('/', (req, res) => {
 });
 
 server.get('/about', (req, res) => {
-  return res.render('about');
+  const about = {
+    avatar_url: 'https://avatars0.githubusercontent.com/u/28929274?s=200&v=4',
+    name: 'Rocketseat',
+    role: 'Plataforma de educação em tecnologia',
+    description:
+      'As melhores tecnologias em programação, direto ao ponto e do jeito certo',
+    links: [
+      { name: 'Github', url: 'https://github.com/Rocketseat' },
+      {
+        name: 'Instagram',
+        url: 'https://www.instagram.com/rocketseat_oficial/?hl=pt-br',
+      },
+      { name: 'Facebook', url: 'https://www.facebook.com/rocketseat/' },
+    ],
+    technologies: [ 
+      "Javascript",
+      "Node.js",
+      "React Native"
+    ]
+  };
+  return res.render('about', { about });
 });
 
 // server.get('/not-found', (req, res) => {
