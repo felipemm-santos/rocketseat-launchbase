@@ -13,6 +13,7 @@ nunjucks.configure('views', {
 
   // Permite html dentro de variáveis
   autoescape: false,
+  noCache: true,
 });
 
 server.get('/', (req, res) => {
@@ -34,18 +35,22 @@ server.get('/about', (req, res) => {
       },
       { name: 'Facebook', url: 'https://www.facebook.com/rocketseat/' },
     ],
-    technologies: [ 
-      "Javascript",
-      "Node.js",
-      "React Native"
-    ]
+    technologies: ['Javascript', 'Node.js', 'React Native'],
   };
   return res.render('about', { about });
 });
 
-// server.get('/not-found', (req, res) => {
-//   return res.render('not-found');
-// });
+server.get('/course/:id', (req, res) => {
+  const id = req.params.id;
+
+  const course = courses.find((course) => course.id == id);
+
+  if (!course) {
+    return res.status(404).render('not-found');
+  }
+
+  return res.render('course', { course });
+});
 
 server.use(function (req, res) {
   res.status(404).render('not-found');

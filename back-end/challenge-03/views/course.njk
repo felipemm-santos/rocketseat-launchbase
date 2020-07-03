@@ -1,0 +1,30 @@
+{% extends "layout.njk" %}
+
+{% block title %}
+  <title>
+    {{course.title}}
+  </title>
+{% endblock title %}
+
+{% block styles %}
+  <link rel="icon" href="assets/favicon.ico" type="image/x-icon"/>
+
+  <link rel="stylesheet" href="/styles/course.css"/>
+{% endblock styles %}
+
+{% block content %}
+  <section class="content course">
+
+    <img src="{{course.image}}" alt="Imagem do curso {{course.title}}"/>
+
+    <p>
+      {{course.description}}
+    </p>
+
+    <p>{{course.modules}}</p>
+    <p class="price">
+      {{course.price}}
+    </p>
+
+  </section>  
+{% endblock content %}
